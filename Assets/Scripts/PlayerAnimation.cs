@@ -10,7 +10,6 @@ public class PlayerAnimation : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody2D>();
-
     }
 
     private void FixedUpdate()

@@ -90,6 +90,7 @@ public class PlayerMovement : MonoBehaviour
         
     private float _frameLeftGrounded = float.MinValue;
     private bool _grounded;
+    public bool Grounded => _grounded;
 
     private void CheckCollisions()
     {
@@ -171,6 +172,15 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             _frameVelocity.x = Mathf.MoveTowards(_frameVelocity.x, _frameInput.Move.x * _stats.MaxSpeed, _stats.Acceleration * Time.fixedDeltaTime);
+            switch (_frameInput.Move.x)
+            {
+                case < 0:
+                    transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+                    break;
+                case > 0:
+                    transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+                    break;
+            }
         }
     }
 
