@@ -145,8 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b11d72d20d4b05aea8c5cda365c56a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 100
-  animator: {fileID: 8115876837335625323}
+  healthPoints: 50
 --- !u!95 &8115876837335625323
 Animator:
   serializedVersion: 5
@@ -176,7 +175,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4681962813185517081}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

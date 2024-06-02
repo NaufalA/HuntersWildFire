@@ -19,8 +19,8 @@ public class EnemyHealth : MonoBehaviour
     {
         healthPoints -= damage;
         animator.SetTrigger("hurt");
-        var xDelta = (hitSource.transform.position.x < transform.position.x ? 1 : -1) * 1;
-        _rb.DOMoveX(transform.position.x + xDelta, 1);
+        var xDelta = (hitSource.transform.position.x < transform.position.x ? 1 : -1) * 0.2f;
+        _rb.DOMoveX(transform.position.x + xDelta, 1).SetEase(Ease.OutExpo);
         
         if (healthPoints <= 0)
         {

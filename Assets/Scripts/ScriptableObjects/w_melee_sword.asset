@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: w_melee_sword
   m_EditorClassIdentifier: 
   damage: 10
-  hitspot: {x: 0.3, y: 0.5}
-  range: 0.2
+  hitspot: {x: 0.15, y: 0.5}
+  range: 0.35

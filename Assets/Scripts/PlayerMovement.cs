@@ -212,7 +212,7 @@ public class PlayerMovement : MonoBehaviour
 
     #endregion
 
-    private void ApplyMovement() => _rb.velocity = _frameVelocity;
+    private void ApplyMovement() => _rb.velocity = !_animator.GetBool("attacking") ? _frameVelocity : Vector2.zero;
 
 #if UNITY_EDITOR
     private void OnValidate()
