@@ -234,6 +234,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 257f020e-fb6e-4df9-b997-2e7257a1fa4f
     m_ActionName: Player/AttackA[/Mouse/leftButton,/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c7930305-8e34-400b-bdf6-d6473a7636fc
+    m_ActionName: Player/Pause[/Keyboard/r,/XInputControllerWindows/start]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
