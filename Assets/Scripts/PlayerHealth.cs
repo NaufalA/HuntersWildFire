@@ -1,7 +1,9 @@
+using System;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private float healthPoints;
 
@@ -18,7 +20,7 @@ public class EnemyHealth : MonoBehaviour
     {
         healthPoints -= damage;
         _animator.SetTrigger("hurt");
-        var xDelta = (hitSource.transform.position.x < transform.position.x ? 1 : -1) * 0.2f;
+        var xDelta = (hitSource.transform.position.x < transform.position.x ? 1 : -1) * 0.5f;
         _rb.DOMoveX(transform.position.x + xDelta, 1).SetEase(Ease.OutExpo);
         
         if (healthPoints <= 0)
@@ -30,7 +32,8 @@ public class EnemyHealth : MonoBehaviour
     private void Die()
     {
         _animator.SetBool("dead", true);
+        GetComponent<PlayerMovement>().enabled = false;
+        GetComponent<PlayerMelee>().enabled = false;
         enabled = false;
-        gameObject.GetComponent<Collider2D>().enabled = false;
     }
 }

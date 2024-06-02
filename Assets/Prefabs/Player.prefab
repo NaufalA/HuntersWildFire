@@ -14,11 +14,12 @@ GameObject:
   - component: {fileID: 9015253042541808777}
   - component: {fileID: 5865964200460924225}
   - component: {fileID: 7513090535788103436}
+  - component: {fileID: 6202360524722234517}
   - component: {fileID: 6286156981745702499}
   - component: {fileID: 6745939895407153039}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -268,6 +269,19 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &6202360524722234517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6887513065872804834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43c1e3e93d4d4859a133dd3b2b18ac88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 100
 --- !u!50 &6286156981745702499
 Rigidbody2D:
   serializedVersion: 4

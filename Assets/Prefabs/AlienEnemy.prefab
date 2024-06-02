@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4382859796390187118}
   - component: {fileID: 872814333570141602}
   - component: {fileID: 3997174573182912889}
+  - component: {fileID: 4886681703926233100}
   - component: {fileID: 8115876837335625323}
   - component: {fileID: 5878587663073948137}
   m_Layer: 7
@@ -146,6 +147,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 50
+--- !u!114 &4886681703926233100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4681962813185517081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82223d80feeb4ac6b23f197900e71da6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionDamage: 10
 --- !u!95 &8115876837335625323
 Animator:
   serializedVersion: 5
