@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private FrameInput _frameInput;
     private Vector2 _frameVelocity;
     private bool _cachedQueryStartInColliders;
+    private Animator _animator;
 
     #region Interface
 
@@ -30,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         _frameInput = new FrameInput();
         _rb = GetComponent<Rigidbody2D>();
         _col = GetComponent<CapsuleCollider2D>();
+        _animator = GetComponent<Animator>();
 
         _cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
     }
@@ -84,6 +86,9 @@ public class PlayerMovement : MonoBehaviour
         HandleGravity();
             
         ApplyMovement();
+    
+        _animator.SetFloat("deltaX", _rb.velocity.normalized.x);
+        _animator.SetFloat("deltaY", _rb.velocity.normalized.y);
     }
 
     #region Collisions
