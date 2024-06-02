@@ -5,8 +5,12 @@ public class Weapon : ScriptableObject
 {
     [SerializeField]
     private float damage;
+    [SerializeField] [Tooltip("hitspot relative position to character")]
+    private Vector2 hitspot;
+    [SerializeField] [Tooltip("hit range")]
+    private float range;
 
     public float Damage => damage;
-
-    public Sprite sprite;
+    public Vector2 Hitspot => hitspot;
+    public float Range => range;
 }

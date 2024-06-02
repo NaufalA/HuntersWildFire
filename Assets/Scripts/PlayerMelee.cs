@@ -6,48 +6,40 @@ public class PlayerMelee : MonoBehaviour
 {
     public Weapon weapon;
     
-    [SerializeField] private GameObject weaponObject;
-    [SerializeField] private GameObject weaponHitbox;
     private Animator _animator;
+    [SerializeField] private Transform hitspot;
     [SerializeField] private LayerMask enemyLayers;
     private PlayerMovement _playerMovement;
 
     private void Awake()
     {
-        _animator = GetComponent<Animator>();
-        _playerMovement = GetComponent<PlayerMovement>();
-    }
-
-    private void Start()
-    {
-        weaponObject.GetComponent<SpriteRenderer>().sprite = weapon.sprite;
+        hitspot.localPosition = weapon.Hitspot;
+        _animator = gameObject.GetComponent<Animator>();
+        _playerMovement = gameObject.GetComponent<PlayerMovement>();
     }
 
     public void Attack(InputAction.CallbackContext ctx)
     {
         if (ctx.performed && _playerMovement.Grounded)
         {
-            Debug.Log("attackperformed");
             _animator.SetTrigger("attackA");
-            weaponHitbox.SetActive(true);
-            var hits = Physics2D.OverlapCircleAll(weaponHitbox.transform.position, 0.2f, enemyLayers);
+            var hits = Physics2D.OverlapCircleAll(hitspot.position, weapon.Range, enemyLayers);
             foreach (var hit in hits)
             {
-                hit.GetComponent<EnemyHealth>().TakeDamage(weapon.Damage);
+                hit.GetComponent<EnemyHealth>().TakeDamage(weapon.Damage, transform);
             }
         }
-        if (ctx.canceled)
-        {
-            Debug.Log("attackCancelled");
-            weaponHitbox.SetActive(false);
-        }
     }
 
-    public void EnableHitbox()
+    private void OnDrawGizmos()
     {
-    }
-
-    public void DisableHitbox()
-    {
+        Gizmos.DrawWireSphere(
+            new Vector3(
+                (transform.position.x + weapon.Hitspot.x * transform.localScale.x), 
+                transform.position.y + weapon.Hitspot.y, 
+                0f
+            ),
+            weapon.Range
+        );
     }
 }

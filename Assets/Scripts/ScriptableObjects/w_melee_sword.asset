@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: w_melee_sword
   m_EditorClassIdentifier: 
   damage: 10
-  sprite: {fileID: -1806291441, guid: 864d1921a66c7574b9b077cd14fb26e3, type: 3}
+  hitspot: {x: 0.3, y: 0.5}
+  range: 0.2
